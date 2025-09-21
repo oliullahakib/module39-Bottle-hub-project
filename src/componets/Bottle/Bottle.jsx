@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Bottle.css"
-const Bottle = ({bottle}) => {
+const Bottle = ({bottle,handleCart}) => {
     const countRating =(ratings)=>{
         const stars =[]
         for(let i =1; i<=ratings; i++){
@@ -18,6 +18,7 @@ const Bottle = ({bottle}) => {
             <h3>Price: ${price}</h3>
             <p>Remaining: {stock} {stock<=3?"Finish Soon" :""}</p>
             <p>Rating: {countRating(ratings)}</p>
+            <button onClick={()=>handleCart(bottle)}>Buy Now</button>
         </div>
     </div>
   )
