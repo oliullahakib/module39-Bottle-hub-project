@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Carts.css"
-const Carts = ({ cart }) => {
+const Carts = ({ cart ,handldeDeleteCart}) => {
     return (
         <div>
             <h1>You Carts:{cart.length} </h1>
@@ -11,7 +11,7 @@ const Carts = ({ cart }) => {
                             <div className='carts-container'>
                                 <img src={bottle.img}></img>
                                 <span>{bottle.name}</span>
-                                <button>x</button>
+                                <button onClick={()=>handldeDeleteCart(bottle.id)}>x</button>
                             </div>
                         </div>
                     )
